@@ -8,12 +8,12 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/cehckout@v4
+      - name: Install Tree
+        run: sudo apt install tree -y
       - name: Investiagte Repo
         run: | 
           pwd
-          ls -lart
-          cd ./github_actions
-          ls -lart
+          tree
 
 
 
