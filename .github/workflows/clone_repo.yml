@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Checkout Repo
         #uses: actions/cehckout@v4
-        run: git clone https://github.com/nxginx19/desktop-tutorial.git
+        run: https://github.com/nxginx19/my-parrot-website.git
       - name: Install Tree
         run: sudo apt install tree -y
       - name: Investiagte Repo
