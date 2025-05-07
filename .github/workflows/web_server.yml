@@ -1,4 +1,4 @@
-name: GitHub Actions On Push
+name: Deploying Multiple Runners
 on: workflow_dispatch
 
 jobs:
@@ -10,5 +10,11 @@ jobs:
         run: git clone https://github.com/nxginx19/my-parrot-website.git
       - name: Check Website Files
         run: ls -lart
+      - name: Move Website Files
+        run: sudo mv ./NG-Website/* /usr/share/nginx/html/
+      - name: Start Nginx Service
+        run: sudo systemct1 start nginx
+      - name: Test Web Service
+        run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status.code)"
 
 
