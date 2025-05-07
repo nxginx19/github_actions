@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Git Clone Repo
         run: git clone https://github.com/nxginx19/my-parrot-website.git
-      - name: Check Website Files
-        run: ls -lart
       - name: Move Website Files
         run: sudo mv ./NG-Website/* /usr/share/nginx/html/
       - name: Check Website Files
@@ -18,6 +16,8 @@ jobs:
         run: |
           sudo systemctl enable nginx
           sudo systemctl start nginx
+      - name: Check Nginx service
+        run: sudo systemctl status nginx
       - name: Test Web Service
         #run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status.code)"
         run: curl localhost:80
