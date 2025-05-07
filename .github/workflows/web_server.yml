@@ -2,7 +2,7 @@ name: Deploying Multiple Runners
 on: workflow_dispatch
 
 jobs:
-  clone-website-and-run-podman:
+  clone-website-and-test-service:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,7 @@ jobs:
         run: curl localhost:80
 
   testing-api-availability:
+    needs: [clone-website-and-test-service]
     runs-on: ubuntu-latest
 
     steps:
