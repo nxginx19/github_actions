@@ -1,0 +1,19 @@
+name: Artifact Downloads
+on: push
+
+jobs:
+  any-old-jon-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make the file
+        run: |
+          touch my_file_to_download
+          echo "Some Stuff" >> my_file_to_download
+          echo "More Stuff" >> my_file_to_download
+      - name: Download file to Artifacts
+        uses: actions/upload-artifacts@v4
+        with:
+            name: my_file_to_download
+            path: /home/runner/work/github_actions/github_actions/my_file_to_download
+
