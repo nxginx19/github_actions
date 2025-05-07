@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - name: Git Clone Repo
-        run: git clone https://github.com/nxginx19/my-parrot-website.git
+        run: git clone https://github.com/nxginx19/my-parrot-website
       - name: Move Website Files
         run: sudo mv ./Website/* /usr/share/nginx/html/
       - name: Check Website Files
