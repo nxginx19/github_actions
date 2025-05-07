@@ -1,0 +1,14 @@
+name: GitHub Actions On Push
+on: workflow_dispatch
+
+jobs:
+  clone-website-and-run-podman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Clone Repo
+        run: git clone https://github.com/nxginx19/my-parrot-website.git
+      - name: Check Website Files
+        run: ls -lart
+
+
