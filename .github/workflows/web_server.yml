@@ -22,5 +22,11 @@ jobs:
         #run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status.code)"
         run: curl localhost:80
 
+  testing-api-availability:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping the Service
+        run: ping 8.8.8.8. -n 100
 
 
