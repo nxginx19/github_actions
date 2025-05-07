@@ -9,7 +9,7 @@ jobs:
       - name: Git Clone Repo
         run: git clone https://github.com/nxginx19/my-parrot-website.git
       - name: Move Website Files
-        run: sudo mv ./NG-Website/* /usr/share/nginx/html/
+        run: sudo mv ./Website/* /usr/share/nginx/html/
       - name: Check Website Files
         run: ls -lart /usr/share/nginx/html
       - name: Start And Enable Nginx Service
