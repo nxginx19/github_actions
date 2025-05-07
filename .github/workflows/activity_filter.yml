@@ -2,7 +2,12 @@ name: Activity Filters
 on:
   workflow_dispatch:
   pull_request:
-    types: [synchronize]
+    types: [opened, synchronize]
+   #segmenting different workflows depending on teams
+  push:
+    branches:
+    - 'dev*'
+    - main
 
 jobs:
   any-old-job-demo:
@@ -12,6 +17,7 @@ jobs:
     steps:
       - name: Any old step
         run: echo "helloooo"
+
 
 
 
