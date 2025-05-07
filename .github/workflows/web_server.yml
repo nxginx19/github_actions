@@ -12,9 +12,15 @@ jobs:
         run: ls -lart
       - name: Move Website Files
         run: sudo mv ./NG-Website/* /usr/share/nginx/html/
-      - name: Start Nginx Service
-        run: sudo systemct1 start nginx
+      - name: Check Website Files
+        run: ls -lart /usr/share/nginx/html
+      - name: Start And Enable Nginx Service
+        run: |
+          sudo systemctl enable nginx
+          sudo systemctl start nginx
       - name: Test Web Service
-        run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status.code)"
+        #run: python3 -c "import requests; r=requests.get('http://localhost:8080');print(r.status.code)"
+        run: curl localhost:80
+
 
 
